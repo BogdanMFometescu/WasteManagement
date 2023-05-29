@@ -13,7 +13,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://web-production-13bd.up.railway.app']
+ALLOWED_HOSTS = ['web-production-13bd.up.railway.app']
+
+
+CSRF_TRUSTED_ORIGINS = ['https://web-production-13bd.up.railway.app']
 
 INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
