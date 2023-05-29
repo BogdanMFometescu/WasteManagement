@@ -1,0 +1,97 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+    <main class="settingsPage profile my-md">
+        <div class="container">
+            <div class="layout">
+                <div class="column column--1of3">
+                    <div class="card text-center">
+                        <div class="card__body dev">
+                            <a class="tag tag--pill tag--main settings__btn" href="{% url 'edit-account' %}"><i
+                                    class="im im-edit"></i> Edit</a>
+                            {%  if profile.profile_image %}
+                            <img class="avatar avatar--xl dev__avatar"
+                                 src="{{ profile.profile_image.url }}"/>
+                            {%  endif %}
+                            <h2 class="dev__name">{{ profile.name }}</h2>
+                            <p class="dev__title">{{ profile.short_intro }}</p>
+                            <p class="dev__location">{{ profile.location }}</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="column column--2of3">
+                    <div class="devInfo">
+                        <h3 class="devInfo__title">About Me</h3>
+                        <p class="devInfo__about">
+                            {{ profile.bio }}
+                        </p>
+                    </div>
+                    <div class="settings">
+                        <h3 class="settings__title">Certificates</h3>
+                        <a class="tag tag--pill tag--sub settings__btn tag--lg" href="{% url 'create-certificate' %}">
+                            <i class="im im-plus"></i> Add Certificate</a>
+                    </div>
+
+                    <table class="settings__table">
+                        {% for certificate in certificates %}
+                            <tr>
+                                <td class="settings__tableInfo">
+
+                                    <h4>{{ certificate }}</h4>
+                                    <p>
+                                        {{ certificate.description }}
+                                    </p>
+                                </td>
+                                <td class="settings__tableActions">
+                                    <a class="tag tag--pill tag--main settings__btn"
+                                       href="{% url 'edit-certificate' certificate.id %}"><i class="im im-edit"></i>
+                                        Edit</a>
+                                    <a class="tag tag--pill tag--main settings__btn"
+                                       href="{% url 'delete-certificate' certificate.id %}"><i
+                                            class="im im-x-mark-circle-o"></i>
+                                        Delete</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+
+
+                    <div class="settings">
+                        <h3 class="settings__title">Records</h3>
+                        <a class="tag tag--pill tag--sub settings__btn tag--lg" href="{% url 'create-record' %}"><i class="im im-plus"></i> Add
+                            Record</a>
+                    </div>
+
+                    <table class="settings__table">
+                        {% for record in records %}
+                            <tr>
+                                <td class="settings__thumbnail">
+                                    {%  if record.picture %}
+                                    <a href="{% url 'record' record.id%}"><img src="{{ record.picture.url }}"
+                                                                       alt="Project Thumbnail"/></a>
+                                    {%  endif %}
+                                </td>
+                                <td class="settings__tableInfo">
+                                    <a href="{% url 'record' record.id%}">{{ record.waste_name }}</a>
+                                    <p>
+                                        {{ record.waste_code }}
+                                    </p>
+                                </td>
+                                <td class="settings__tableActions">
+                                    <a class="tag tag--pill tag--main settings__btn" href="{% url 'update-record' record.id %}"><i class="im im-edit"></i>
+                                        Edit</a>
+                                    <a class="tag tag--pill tag--main settings__btn" href="{% url 'delete-record' record.id %}"><i
+                                            class="im im-x-mark-circle-o"></i>
+                                        Delete</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+{% endblock %}

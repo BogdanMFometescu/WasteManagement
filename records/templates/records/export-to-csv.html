@@ -1,0 +1,20 @@
+{% extends 'main.html' %}
+{%  load static %}
+{% block content %}
+
+    <main class="formPage my-xl">
+        <div class="content-box">
+            <div class="formWrapper">
+
+
+                <form class="form" method="POST" action="{%  url 'export-to-csv' %}">
+                    {% csrf_token %}
+
+                    <input class="btn btn--sub btn--lg  my-md" type="submit" value="Submit" />
+                </form>
+
+            </div>
+        </div>
+    </main>
+
+{% endblock content %}

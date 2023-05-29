@@ -1,0 +1,154 @@
+{%  extends 'main.html' %}
+
+
+{%  block content %}
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            margin-left: 10px;
+            text-align: left;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #dddddd;
+        }
+
+        td + td {
+            padding-left: 20px;
+        }
+    </style>
+
+    <h2 align="center" style="color: #205067;" ><b>WASTE RECORDS REPORTS</b> </h2>
+
+    <h2 style="margin-left: 10px">Total quantities </h2><small style="margin-left: 10px">Records until : {% now "F d, Y" %}</small>
+    <br>
+    <small style="margin-left: 10px">Note : Quantities are in kg</small>
+    <table>
+        <thead>
+        <tr>
+            <th>Company</th>
+            <th style="width: 150px">Waste Code</th>
+            <th>Generated </th>
+            <th>Recycled </th>
+            <th>Disposed </th>
+            <th>Stock </th>
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in summaries %}
+            <tr>
+                <td>{{ item.company }}</td>
+                <td style="width: 150px">{{ item.waste_code }}</td>
+                <td>{{ item.total_generated_quantity }}</td>
+                <td>{{ item.total_recycled_quantity }}</td>
+                <td>{{ item.total_disposed_quantity }}</td>
+                <td>{{ item.stock_quantity }}</td>
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <br>
+
+    <style>
+        .form-row {
+            margin-bottom: 10px;
+            margin-left: 10px;
+        }
+
+        .form-row label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-row input, .form-row select {
+            margin-bottom: 5px;
+        }
+
+        .form-submit {
+            margin-top: 10px;
+        }
+    </style>
+
+
+    <h2 style="margin-left: 10px">Search for records</h2>
+    <form class="form" method="get">
+        <div class="form-row">
+            {{ my_filter.form }}
+        </div>
+
+        <div class="form-submit" style="margin-left: 10px">
+            <input class="btn btn--sub btn--lg my-md" type="submit" value="Search" />
+        </div>
+    </form>
+
+
+    <small style="margin-left: 10px;">Note : Quantities are in kg</small>
+    <table>
+        <thead>
+        <tr>
+            <th>Company</th>
+            <th>County</th>
+            <th style="width: 150px">Code</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Generated </th>
+            <th>Recycled </th>
+            <th>Disposed </th>
+            <th>Recycling Method</th>
+            <th>Disposal Method</th>
+            <th>Waste Company</th>
+            <th>Date </th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in all_records %}
+            <tr>
+                <td>{{ item.company }}</td>
+                <td>{{ item.county }}</td>
+                <td style="width: 150px">{{ item.waste_code }}</td>
+                <td>{{ item.waste_name }}</td>
+                <td>{{ item.type_of_waste }}</td>
+                <td>{{ item.generated_quantity }}</td>
+                <td>{{ item.recycled_quantity }}</td>
+                <td>{{ item.disposed_quantity }}</td>
+                {% if item.recycling_method == None %}
+                    <td>N/A</td>
+                {%  else %}
+                    <td>{{ item.recycling_method }}</td>
+                {% endif %}
+                {% if item.disposal_method == None %}
+                    <td>N/A</td>
+                {% else %}
+                    <td>{{ item.disposal_method }}</td>
+                {% endif %}
+                <td>{{ item.waste_company }}</td>
+                <td>{{ item.created }}</td>
+
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+                <form class="form" method="POST" action="{%  url 'export-to-csv' %}">
+                    {% csrf_token %}
+                    <div style="margin-left: 10px;">
+                    <input class="btn btn--sub btn--lg  my-md" type="submit" value="Download CSV" />
+                    </div>>
+                </form>
+
+
+
+{%  endblock content %}

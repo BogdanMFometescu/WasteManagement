@@ -1,0 +1,46 @@
+EWC_CHOICES = [('01 01 01', '01 01 01_wastes from mineral metalliferous excavation'),
+               ('01 01 02', '01 01 02_wastes from mineral non-metalliferous excavation'),
+               ('01 03 04*', '01 03 04*_acid-generating tailings from processing of sulphide ore'),
+               ('01 03 05*', '01 03 05*_other tailings containing hazardous substances'),
+               ('01 03 06', '01 03 06_tailings other than those mentioned in 01 03 04 and 01 03 05'),
+               ('01 03 07*', '01 03 07*_tailings other than those mentioned in 01 03 04 and 01 03 05'),
+               ('01 03 08', '01 03 08_dusty and powdery wastes other than those mentioned in 01 03 07'),
+               ('01 03 09', '01 03 09_red mud from alumina production other than the wastes mentioned in 01 03 10'),
+               ('01 03 10*',
+                '01 03 10*_red mud from alumina production containing hazardous substances other than the wastes '
+                'mentioned in 01 03 07'),
+               ('01 03 99', '01 03 99_wastes not otherwise specified'),
+               ('01 04 07*',
+                '01 04 07*_wastes containing hazardous substances from physical and chemical processing of '
+                'non-metalliferous minerals'),
+               ('01 04 08', '01 04 08_waste gravel and crushed rocks other than those mentioned in 01 04 07'),
+               ('17 04 05', '17 04 05_Iron Scrap'),
+               ('17 01 01', '17 01 01_Aluminium'), ('17 04 05', '17 04 05_Iron Scrap'),
+               ('17 01 07', '17 01 07   and demolition waste')]
+
+WASTE_TYPE_CHOICES = [('Hazardous', 'Hazardous Waste'), ('Non-Hazardous', 'Non-Hazardous Waste')]
+RECYCLING_METHOD_CHOICES = [('R1', 'R1_Use principally as a fuel or other means to generate energy'),
+                            ('R2', 'R2_Recovery of substances or use as a substitute for raw materials.'),
+                            ('R3', 'R3_Recycling/reclamation of organic substances that are not used as solvents'),
+                            ('R4', 'R4_Recycling/reclamation of metals and metal compounds'),
+                            ('R5', 'R5_Recycling/reclamation of other inorganic materials.'),
+                            ('R6', 'R6_Regeneration of acids or bases'),
+                            ('R7', 'R7_Recovery of components used for pollution abatement'),
+                            ('R8', 'R8_Recovery of components from catalysts'),
+                            ('R9', 'R9_Used oil refining'),
+                            ('R10',
+                             'R10_Land treatment resulting in benefit to agriculture or ecological improvement'),
+                            ]
+
+DISPOSAL_METHOD_CHOICES = [('D1', 'D1_Deposit into or onto land (e.g., landfill).'),
+                           ('D2',
+                            ' D2_Land treatment (e.g., biodegradation of liquid or sludgy discards in soils).'),
+                           ('D3', ' D3_Deep injection (e.g., injection into deep wells).'),
+                           ('D4', 'D4_Surface impoundment (e.g., holding of liquids or sludges).'),
+                           ('D5', 'D5_Specially engineered landfill.'),
+                           ('D6', 'D6_Release into a water body except seas/oceans.'),
+                           ('D7', 'D7_Release into seas or oceans, including sea-bed insertion.'),
+                           ('D8', 'D8_Biological treatment not specified elsewhere in this list.'),
+                           ('D9', 'D9_Physico-chemical treatment not specified elsewhere in this list.'),
+                           ('D10', 'D10_Incineration on land.'),
+                           ]

@@ -1,0 +1,72 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+    <main class="projects">
+        <section class="hero-section text-center">
+            <div class="container container--narrow">
+                <div class="hero-section__box">
+                    <h2>Search for <span>Waste Records</span></h2>
+                </div>
+
+                <div class="hero-section__search">
+                    <form class="form" action="{% url 'records' %}" method="get">
+                        <div class="form__field">
+                            <label for="formInput#search">Search By Waste Name </label>
+                            <input class="input input--text" id="formInput#search" type="text" name="search_query"
+                                   value="{{ search_query }}" placeholder="Search by Waste Name"/>
+                        </div>
+
+                        <input class="btn btn--sub btn--lg" type="submit" value="Search"/>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="projectsList">
+            <div class="container">
+                <div class="grid grid--three">
+                    {% for record in records %}
+                        <div class="column">
+                            <div class="card project">
+                                <a href="{% url 'record' record.id %}" class="project">
+                                    <!--{% if record.picture %}
+                                    <img class="project__thumbnail" src="{{ record.picture.url }}"
+                                         alt="Waste Record Pictures"/>
+                                    {%  endif %} -->
+                                    <div class="card__body">
+                                        <h3 class="project__title">{{ record.waste_name }}</h3>
+                                        <h3 class="project__title">{{ record.company }}</h3>
+                                        <h3 class="project__title">{{ record.county }}</h3>
+                                        <p><a class="project__author"
+                                              href="{% url 'profiles' %}">Recorded by {{ record.owner.name }}</a></p>
+                                        <p class="project--rating">
+                                            <span style="font-weight: bold;"> {{ record.created.date }}</span>
+                                            <br>
+                                            Quantity : {{ record.generated_quantity }} KG
+                                        </p>
+                                        <div class="project__tags">
+                                            {% for tag in record.tags.all %}
+                                                <span class="tag tag--pill tag--main">
+                      <small>{{ tag }}</small>
+                    </span>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+
+                </div>
+            </div>
+        </section>
+
+        {% include 'pagination.html' with queryset=records custom_range=custom_range %}
+
+    </main>
+
+
+
+{% endblock content %}

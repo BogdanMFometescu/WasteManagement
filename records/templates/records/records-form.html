@@ -1,0 +1,36 @@
+{% extends 'main.html' %}
+{%  load static %}
+{% block content %}
+
+    <main class="formPage my-xl">
+        <h2 align="center" style="color: #205067;" ><b>RECORD WASTE FORM</b> </h2>
+        <div class="content-box">
+            <div class="formWrapper">
+
+                <a class="backButton" href="{% url 'records' %}"><i class="im im-angle-left"></i></a>
+                <br>
+
+                <form class="form" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {% for field in form %}
+                    <div class="form__field">
+                        <label for="formInput#text">{{ field.label }} </label>
+                        {{ field }}
+                        {%  if field.errors %}
+                        {%  for error in field.errors %}
+                           <p style="color: red"> {{ error }}</p>
+                        {% endfor %}
+                        {% endif %}
+
+
+
+                    </div>
+                {% endfor %}
+                    <input class="btn btn--sub btn--lg  my-md" type="submit" value="Submit" />
+                </form>
+
+            </div>
+        </div>
+    </main>
+
+{% endblock content %}
