@@ -84,6 +84,7 @@
 
     <h2 style="margin-left: 10px">Search for records</h2>
     <form class="form" method="get">
+        {%csrf_token%}
         <div class="form-row">
             {{ my_filter.form }}
         </div>

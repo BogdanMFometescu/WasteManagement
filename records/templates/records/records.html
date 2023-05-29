@@ -11,6 +11,7 @@
 
                 <div class="hero-section__search">
                     <form class="form" action="{% url 'records' %}" method="get">
+                        {%{% csrf_token %}%}
                         <div class="form__field">
                             <label for="formInput#search">Search By Waste Name </label>
                             <input class="input input--text" id="formInput#search" type="text" name="search_query"
