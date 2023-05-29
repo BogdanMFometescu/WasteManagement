@@ -13,6 +13,7 @@
 
                 <div class="hero-section__search">
                     <form class="form" action="#" method="get">
+                        {% csrf_token %}
                         <div class="form__field">
                             <label for="formInput#search">Search Users </label>
                             <input class="input input--text" id="formInput#search" type="text" name="search_query"
