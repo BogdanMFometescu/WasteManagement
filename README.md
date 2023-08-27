@@ -1,5 +1,4 @@
 - [About](#About)
-- [Demo](#Demo)
 - [Usage](#Usage)
 - [Features](#Features)
 - [More Info](#More-info)
@@ -7,9 +6,6 @@
 ## About
 
 Django Web Application which allows users to manage waste records for multiple companies.
-
-## Demo
-Sample version is available at : https://web-production-13bd.up.railway.app
 
 
 ## Usage
