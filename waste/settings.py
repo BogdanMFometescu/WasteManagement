@@ -1,10 +1,4 @@
 
-
-
-
-
-
-import os
 import os.path
 import environ
 from pathlib import Path
@@ -13,10 +7,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['web-production-13bd.up.railway.app']
+ALLOWED_HOSTS = ['localhost']
 
-
-CSRF_TRUSTED_ORIGINS = ['https://web-production-13bd.up.railway.app']
+#CSRF_TRUSTED_ORIGINS = ['']
 
 INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
@@ -62,7 +55,7 @@ ROOT_URLCONF = 'waste.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'templates')]
+        'DIRS': [os.path.join(BASE_DIR, 'templates')]
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -77,16 +70,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'waste.wsgi.application'
-
-# Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
-# DATABASES = {
-# 'default': {
-#    'ENGINE': 'django.db.backends.sqlite3',
-#   'NAME': BASE_DIR / 'db.sqlite3',
-# }
-# }
 
 env = environ.Env()
 environ.Env.read_env(os.path.join(BASE_DIR / '.env'))
@@ -109,8 +92,6 @@ CLOUDINARY_STORAGE = {
     'API_SECRET': env('API_SECRET')
 
 }
-
-
 
 AUTH_PASSWORD_VALIDATORS = [
     {
