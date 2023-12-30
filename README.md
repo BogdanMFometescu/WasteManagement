@@ -48,6 +48,13 @@ machine for development and testing purposes.
 ### 3.Initialize the database
 - **create .env file with the variable names from settings.py.**
 
+To generate a new Django secret key use the following command:
+```bash
+python manage.py shell
+from django.core.management.utils import get_random_secret_key
+print(get_random_secret_key())
+```
+
 ```bash
 python manage.py migrate
 ```
