@@ -11,7 +11,7 @@ djangorestframework==3.14.0
 environ==1.0
 gunicorn==20.1.0
 idna==3.4
-Pillow==9.5.0
+Pillow
 psycopg2==2.9.6
 pytz==2023.3
 requests==2.31.0
