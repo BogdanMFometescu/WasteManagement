@@ -46,6 +46,8 @@ machine for development and testing purposes.
 ```
 
 ### 3.Initialize the database
+- **create .env file with the variable names from settings.py.**
+
 ```bash
 python manage.py migrate
 ```
