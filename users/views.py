@@ -19,7 +19,7 @@ def login_user(request):
 
         try:
             user = User.objects.get(username=username)
-        except:
+        except ValueError:
             messages.error(request, 'Username does not exist')
 
         user = authenticate(request, username=username, password=password)
@@ -175,7 +175,7 @@ def create_message(request, pk):
 
     try:
         sender = request.user.profile
-    except:
+    except ValueError:
         sender = None
 
     if request.method == 'POST':

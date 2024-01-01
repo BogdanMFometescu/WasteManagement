@@ -2,7 +2,7 @@ import csv
 from operator import itemgetter
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .forms import RecordForm
 from .models import Record
 from .utils import search_waste, REPORTS_COLUMNS_VALUES, REPORTS_COLUMNS_HEADER, paginate_records
@@ -75,12 +75,11 @@ def get_reports(request):
     my_filter = FilterRecords(request.GET, queryset=all_records)
     all_records = my_filter.qs
 
-
     context = {
         'summaries': summaries,
         'summaries_of_records': summaries_of_records,
-        'my_filter':my_filter,
-        'all_records':all_records
+        'my_filter': my_filter,
+        'all_records': all_records
 
     }
 
@@ -108,5 +107,3 @@ def export_to_csv(request):
 @login_required(login_url='login')
 def export_to_csv_view(request):
     return render(request, 'records/export-to-csv.html')
-
-
