@@ -3,7 +3,6 @@ import uuid
 from django.contrib.auth.models import User
 
 
-
 class Profile(models.Model):
     user = models.OneToOneField(
         User, on_delete=models.CASCADE, null=True, blank=True)
@@ -14,7 +13,7 @@ class Profile(models.Model):
     short_intro = models.CharField(max_length=200, blank=True, null=True)
     bio = models.TextField(blank=True, null=True)
     profile_image = models.ImageField(
-        null=True, blank=True, upload_to='media/')
+        null=True, blank=True)
     created = models.DateTimeField(auto_now_add=True)
     id = models.UUIDField(default=uuid.uuid4, editable=False, unique=True, primary_key=True)
 
