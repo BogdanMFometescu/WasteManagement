@@ -12,6 +12,7 @@ This application allows users to track waste collection and  manage recycling pr
 - **User Registration and Login: Secure user authentication system.**
 - **Waste Collection Tracking: Users can track waste collection and disposal/recycling.**
 - **Recycling Management: Information and management tools for recycling processes.**  
+- **API : built with DRF and simple-jwt** 
 
 
 
@@ -19,6 +20,7 @@ This application allows users to track waste collection and  manage recycling pr
 ## Technology Stack
 - **Backend: Django (Python)** 
 - **Database: Postgresql** 
+- **API: Django Rest Framework**
 - **Frontend: HTML, CSS**
 - **Dependency Management: Poetry**
 
