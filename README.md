@@ -84,5 +84,5 @@ python manage.py test
 
 
 ### Versioning
-- ** This application is at version 0.1.0 and subjected to future changes.**
+- ** This application is at version 0.3.0 and subjected to future changes.**
 - 
