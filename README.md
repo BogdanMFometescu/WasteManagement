@@ -11,7 +11,8 @@ This application allows users to track waste collection and  manage recycling pr
 
 - **User Registration and Login: Secure user authentication system.**
 - **Waste Collection Tracking: Users can track waste collection and disposal/recycling.**
-- **Recycling Management: Information and management tools for recycling processes.**  
+- **Recycling Management: Information and management tools for recycling processes.** 
+- **Export data in csv and pdf format**
 - **API : built with DRF and simple-jwt** 
 
 
@@ -84,5 +85,5 @@ python manage.py test
 
 
 ### Versioning
-- ** This application is at version 0.3.0 and subjected to future changes.**
+- ** This application is at version 0.3.2 and subjected to future changes.**
 - 

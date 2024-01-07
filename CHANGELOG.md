@@ -4,6 +4,25 @@
 - This app was developed on local machine and deployed to railway.
 
 
+[07.01.2024]
+
+Version 0.3.2
+-
+- added pdf export option for the reports  using xhtml2pdf 
+- added 2 new functions in records/views.py
+- added 1 new cls function to records/models.py
+- added 1 new html template to export pdf 
+- added 2 new paths in records/urls.py
+
+
+[06.01.2024]
+
+Version 0.3.1
+-
+- added Dockerfile and docker-compose.yml
+
+
+
 [02.01.2024]
 
 Version 0.3.0

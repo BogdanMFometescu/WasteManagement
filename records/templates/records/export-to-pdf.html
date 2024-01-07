@@ -1,0 +1,156 @@
+<style>
+    @page {
+        size: landscape;
+        margin: 20px; /* Add margin to the page */
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    h2 {
+        margin-left: 10px;
+        color: #205067;
+    }
+
+    small {
+        margin-left: 10px;
+    }
+
+    table {
+        width: 100%; /* Use 100% width for the table */
+        border-collapse: collapse;
+    }
+
+    th, td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: left;
+        word-wrap: break-word;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    .form-row label {
+        display: block;
+        margin-bottom: 2px;
+    }
+
+    .form-row input, .form-row select {
+        margin-bottom: 2px;
+    }
+</style>
+
+<h2 style="color: #205067;"><b>REPORT ON WASTE MANAGEMENT </b></h2>
+
+<h2 style="margin-left: 10px">I. Waste Generation </h2>
+<h2 style="margin-left: 10px">Valid records as of : {% now "d.m.Y" %}</h2>
+<br>
+<table>
+    <thead>
+    <tr>
+        <th>Sr.No</th>
+        <th>Company Name</th>
+        <th style="width: 150px">Waste Code</th>
+        <th>Generated Quantity</th>
+        <th>Recycled/Recovered Quantity</th>
+        <th>Eliminated Quantity</th>
+        <th>Stock Quantity</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for item in summaries %}
+        <tr>
+            <td style="width: 80px">{{ forloop.counter }}</td>
+            <td>{{ item.company }}</td>
+            <td style="width: 150px">{{ item.waste_code }}</td>
+            <td>{{ item.total_generated_quantity }}</td>
+            <td>{{ item.total_recycled_quantity }}</td>
+            <td>{{ item.total_disposed_quantity }}</td>
+            <td>{{ item.stock_quantity }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<br>
+
+<br>
+
+<h2 style="margin-left: 10px">II. Waste Storage</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Sr.No</th>
+        <th>Company Name</th>
+        <th>County</th>
+        <th style="width: 150px">Waste Code</th>
+        <th style="width: 150px">Generated Quantity</th>
+        <th style="width: 150px">Recovered Quantity</th>
+        <th style="width: 150px">Eliminated Quantity</th>
+        <th style="width: 150px">Stock Quantity</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for item in summaries_county %}
+        <tr>
+            <td style="width: 50px">{{ forloop.counter }}</td>
+            <td style="width: 150px">{{ item.company_name }}</td>
+            <td style="width: 150px">{{ item.county_name }}</td>
+            <td style="width: 150px">{{ item.waste_code }}</td>
+            <td>{{ item.total_generated_quantity }}</td>
+            <td>{{ item.total_recycled_quantity }}</td>
+            <td>{{ item.total_disposed_quantity }}</td>
+            <td>{{ item.stock_quantity }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<h2 style="margin-left: 10px">III. Waste Recovery/Disposal</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Sr.No</th>
+        <th>Company Name</th>
+        <th style="width: 150px">County</th>
+        <th style="width: 150px">Waste Code</th>
+        <th>Waste Type</th>
+        <th>Generated Quantity</th>
+        <th>Recovered Quantity</th>
+        <th>Eliminated Quantity</th>
+        <th>Recovery Operation</th>
+        <th>Disposal Operation</th>
+        <th>Collector</th>
+        <th>Date</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for item in all_records %}
+        <tr>
+            <td style="width: 80px">{{ forloop.counter }}</td>
+            <td  style="width: 100px">{{ item.company }}</td>
+            <td  style="width: 100px">{{ item.county }}</td>
+            <td style="width: 100px">{{ item.waste_code }}</td>
+            <td>{{ item.type_of_waste }}</td>
+            <td>{{ item.generated_quantity }}</td>
+            <td>{{ item.recycled_quantity }}</td>
+            <td>{{ item.disposed_quantity }}</td>
+            {% if item.recycling_method == None %}
+                <td>N/A</td>
+            {% else %}
+                <td>{{ item.recycling_method }}</td>
+            {% endif %}
+            {% if item.disposal_method == None %}
+                <td>N/A</td>
+            {% else %}
+                <td>{{ item.disposal_method }}</td>
+            {% endif %}
+            <td style="width: 150px">{{ item.waste_company }}</td>
+            <td>{{ item.created|date:'m.d.Y' }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<h3 style="margin-left: 10px">Note: Quantities are in kilograms</h3>

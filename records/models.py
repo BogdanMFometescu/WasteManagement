@@ -100,6 +100,43 @@ class Record(models.Model):
         return summaries_of_records
 
 
+    @classmethod
+    def get_quantity_by_county(cls):
+        unique_waste_code = cls.objects.values('waste_code').distinct()
+        total_quantities_per_waste_code = []
+
+        for waste_code in unique_waste_code:
+            waste_code = waste_code['waste_code']
+            county_query = cls.objects.filter(waste_code=waste_code).values_list('county', flat=True).distinct()
+
+            for county_name in county_query:
+                total_generated_quantity = \
+                    cls.objects.filter(waste_code=waste_code, county=county_name).aggregate(Sum('generated_quantity'))[
+                        'generated_quantity__sum'] or 0
+                total_recycled_quantity = \
+                    cls.objects.filter(waste_code=waste_code, county=county_name).aggregate(Sum('recycled_quantity'))[
+                        'recycled_quantity__sum'] or 0
+
+                total_disposed_quantity = \
+                    cls.objects.filter(waste_code=waste_code, county=county_name).aggregate(Sum('disposed_quantity'))[
+                        'disposed_quantity__sum'] or 0
+
+                stock_quantity = total_generated_quantity - (total_recycled_quantity + total_disposed_quantity)
+                if stock_quantity < 0:
+                    stock_quantity = 0
+
+                for company_name in cls.objects.values('company').distinct():
+                    total_quantities_per_waste_code.append({'company_name': company_name['company'],
+                                                            'county_name': county_name,
+                                                            'waste_code': waste_code,
+                                                            'total_generated_quantity': total_generated_quantity,
+                                                            'total_recycled_quantity': total_recycled_quantity,
+                                                            'total_disposed_quantity': total_disposed_quantity,
+                                                            'stock_quantity': stock_quantity,
+                                                            })
+
+        return total_quantities_per_waste_code
+
 def __str__(self):
     return self.waste_name
 

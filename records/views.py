@@ -7,6 +7,8 @@ from .forms import RecordForm
 from .models import Record
 from .utils import search_waste, REPORTS_COLUMNS_VALUES, REPORTS_COLUMNS_HEADER, paginate_records
 from .filters import FilterRecords
+from django.template.loader import get_template
+from xhtml2pdf import pisa
 
 
 def records(request):
@@ -18,7 +20,7 @@ def records(request):
 
 
 def record(request, pk):
-    one_record = Record.objects.get(id=pk)
+    one_record = get_object_or_404(Record, id=pk)
     context = {'record': one_record}
     return render(request, 'records/single-record.html', context)
 
@@ -28,7 +30,7 @@ def create_record(request):
     profile = request.user.profile
     form = RecordForm()
     if request.method == 'POST':
-        form = RecordForm(request.POST, request.FILES)
+        form = RecordForm(request.POST or None, request.FILES)
         if form.is_valid():
             new_record = form.save(commit=False)
             new_record.owner = profile
@@ -45,7 +47,7 @@ def update_record(request, pk):
     record_to_update = profile.record_set.get(id=pk)
     form = RecordForm(instance=record_to_update)
     if request.method == 'POST':
-        form = RecordForm(request.POST, request.FILES, instance=record_to_update)
+        form = RecordForm(request.POST or None, request.FILES, instance=record_to_update)
         if form.is_valid():
             form.save()
             return redirect('records')
@@ -107,3 +109,36 @@ def export_to_csv(request):
 @login_required(login_url='login')
 def export_to_csv_view(request):
     return render(request, 'records/export-to-csv.html')
+
+
+@login_required(login_url='login')
+def export_to_pdf(request):
+    all_records = Record.objects.all()
+    summaries = Record.get_total_quantities()
+    summaries_of_records = Record.get_all_records()
+    summaries_county = Record.get_quantity_by_county()
+    template_path = 'records/export-to-pdf.html'
+    context = {'all_records': all_records,
+               'summaries': summaries,
+               'summaries_of_records': summaries_of_records,
+               'summaries_county': summaries_county,
+               }
+    # Create a Django response object, and specify content_type as pdf
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment; filename="report.pdf"'
+    # find the template and render it.
+    template = get_template(template_path)
+    html = template.render(context)
+
+    # create a pdf
+    pisa_status = pisa.CreatePDF(
+        html, dest=response, )
+    # if error then show some funny view
+    if pisa_status.err:
+        return HttpResponse('We had some errors <pre>' + html + '</pre>')
+    return response
+
+
+@login_required(login_url='login')
+def export_to_pdf_view(request):
+    return render(request, 'records/export-to-pdf.html')

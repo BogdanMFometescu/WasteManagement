@@ -5,19 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="310bbe92-4f57-43c4-98db-03cae8029aea" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/records/templates/records/export-to-pdf.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/WasteApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/WasteApp.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/records/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/records/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/records/templates/records/records.html" beforeDir="false" afterPath="$PROJECT_DIR$/records/templates/records/records.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/records/templates/records/reports.html" beforeDir="false" afterPath="$PROJECT_DIR$/records/templates/records/reports.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/records/templates/records/single-record.html" beforeDir="false" afterPath="$PROJECT_DIR$/records/templates/records/single-record.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/records/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/records/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/records/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/records/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/waste/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/waste/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
         <option value="Dockerfile" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -38,12 +56,13 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;G:/Bogdan/PROGRAMARE/Portofolio/waste-management/WasteManagement/waste/settings.py&quot;,
+    &quot;last_opened_file_path&quot;: &quot;G:/Bogdan/2024/PROGRAMARE/PORTOFOLIO/waste-management/WasteManagement/waste/settings.py&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -78,6 +97,19 @@
       <workItem from="1704475254757" duration="227000" />
       <workItem from="1704535251876" duration="599000" />
       <workItem from="1704535883098" duration="214000" />
+      <workItem from="1704537188938" duration="119000" />
+      <workItem from="1704537340298" duration="206000" />
+      <workItem from="1704538378569" duration="169000" />
+      <workItem from="1704538823952" duration="977000" />
+      <workItem from="1704539827333" duration="283000" />
+      <workItem from="1704540492651" duration="560000" />
+      <workItem from="1704541344369" duration="194000" />
+      <workItem from="1704560797401" duration="1035000" />
+      <workItem from="1704562466092" duration="822000" />
+      <workItem from="1704563650683" duration="240000" />
+      <workItem from="1704563946142" duration="101000" />
+      <workItem from="1704639365884" duration="876000" />
+      <workItem from="1704640282322" duration="1134000" />
     </task>
     <servers />
   </component>

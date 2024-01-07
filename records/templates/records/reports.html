@@ -15,7 +15,6 @@
             border: 1px solid #dddddd;
             text-align: left;
             padding: 8px;
-            text-align: left;
         }
 
         th {
@@ -27,7 +26,7 @@
         }
     </style>
 
-    <h2 align="center" style="color: #205067;" ><b>WASTE RECORDS REPORTS</b> </h2>
+    <h2 style="color: #205067;" ><b>WASTE RECORDS REPORTS</b> </h2>
 
     <h2 style="margin-left: 10px">Total quantities </h2><small style="margin-left: 10px">Records until : {% now "F d, Y" %}</small>
     <br>
@@ -80,6 +79,8 @@
             margin-top: 10px;
         }
     </style>
+
+
 
 
     <h2 style="margin-left: 10px">Search for records</h2>
@@ -147,7 +148,15 @@
                     {% csrf_token %}
                     <div style="margin-left: 10px;">
                     <input class="btn btn--sub btn--lg  my-md" type="submit" value="Download CSV" />
-                    </div>>
+                    </div>
+                </form>
+
+
+                 <form class="form" method="POST" action="{%  url 'export-pdf' %}">
+                    {% csrf_token %}
+                    <div style="margin-left: 10px;">
+                    <input class="btn btn--sub btn--lg  my-md" type="submit" value="Download PDF" />
+                    </div>
                 </form>
 
 
