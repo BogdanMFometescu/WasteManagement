@@ -13,7 +13,7 @@ from xhtml2pdf import pisa
 
 def records(request):
     all_records, search_query = search_waste(request)
-    custom_range, all_records = paginate_records(request, all_records, 3)
+    custom_range, all_records = paginate_records(request, all_records, 6)
 
     context = {'records': all_records, 'search_query': search_query, 'custom_range': custom_range}
     return render(request, 'records/records.html', context)
@@ -30,7 +30,7 @@ def create_record(request):
     profile = request.user.profile
     form = RecordForm()
     if request.method == 'POST':
-        form = RecordForm(request.POST or None, request.FILES)
+        form = RecordForm(request.POST or None, request.FILES or None)
         if form.is_valid():
             new_record = form.save(commit=False)
             new_record.owner = profile
@@ -47,7 +47,7 @@ def update_record(request, pk):
     record_to_update = profile.record_set.get(id=pk)
     form = RecordForm(instance=record_to_update)
     if request.method == 'POST':
-        form = RecordForm(request.POST or None, request.FILES, instance=record_to_update)
+        form = RecordForm(request.POST or None, request.FILES or None, instance=record_to_update)
         if form.is_valid():
             form.save()
             return redirect('records')
@@ -91,7 +91,7 @@ def get_reports(request):
 @login_required(login_url='login')
 def export_to_csv(request):
     response = HttpResponse(content_type='text/csv')
-    response['Content-Disposition'] = 'attachment;filename =report.csv'
+    response['Content-Disposition'] = 'attachment;filename =csv_report.csv'
     writer = csv.writer(response)
     writer.writerow(['Title: List of all waste records'])
     writer.writerow([])
@@ -125,7 +125,7 @@ def export_to_pdf(request):
                }
     # Create a Django response object, and specify content_type as pdf
     response = HttpResponse(content_type='application/pdf')
-    response['Content-Disposition'] = 'attachment; filename="report.pdf"'
+    response['Content-Disposition'] = 'attachment; filename="waste_evidence_report.pdf"'
     # find the template and render it.
     template = get_template(template_path)
     html = template.render(context)

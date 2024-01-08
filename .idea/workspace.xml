@@ -5,22 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="310bbe92-4f57-43c4-98db-03cae8029aea" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/records/templates/records/export-to-pdf.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/WasteApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/WasteApp.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/records/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/records/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/records/templates/records/records.html" beforeDir="false" afterPath="$PROJECT_DIR$/records/templates/records/records.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/records/templates/records/reports.html" beforeDir="false" afterPath="$PROJECT_DIR$/records/templates/records/reports.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/records/templates/records/single-record.html" beforeDir="false" afterPath="$PROJECT_DIR$/records/templates/records/single-record.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/records/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/records/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/records/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/records/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/waste/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/waste/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +53,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.django.DjangoModulesConfigurable&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -109,7 +94,8 @@
       <workItem from="1704563650683" duration="240000" />
       <workItem from="1704563946142" duration="101000" />
       <workItem from="1704639365884" duration="876000" />
-      <workItem from="1704640282322" duration="1134000" />
+      <workItem from="1704640282322" duration="1567000" />
+      <workItem from="1704641944186" duration="87000" />
     </task>
     <servers />
   </component>
