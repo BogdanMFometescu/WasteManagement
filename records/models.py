@@ -22,7 +22,7 @@ class Record(models.Model):
     disposal_method = models.CharField(null=True, blank=True, choices=DISPOSAL_METHOD_CHOICES)
     type_of_waste = models.CharField(null=True, blank=True, choices=WASTE_TYPE_CHOICES)
     picture = models.ImageField(blank=True, null=True)
-    evidence = models.FileField(blank=True,null=True)
+    evidence = models.FileField(blank=True, null=True)
     waste_description = models.TextField(blank=True, null=True, max_length=1000)
     created = models.DateTimeField(auto_now_add=True)
     id = models.UUIDField(default=uuid.uuid4, editable=False, unique=True, primary_key=True)
@@ -81,7 +81,8 @@ class Record(models.Model):
 
         for record in cls.objects.all().values('company', 'waste_code', 'generated_quantity',
                                                'recycled_quantity', 'waste_name', 'disposed_quantity', 'created',
-                                               'waste_company', 'recycling_method', 'disposal_method','type_of_waste').distinct():
+                                               'waste_company', 'recycling_method', 'disposal_method',
+                                               'type_of_waste').distinct():
             created_date = record['created'].strftime('%d-%m-%Y')
             summaries_of_records.append({
                 'company': record['company'],
@@ -98,7 +99,6 @@ class Record(models.Model):
             })
 
         return summaries_of_records
-
 
     @classmethod
     def get_quantity_by_county(cls):
@@ -136,6 +136,7 @@ class Record(models.Model):
                                                             })
 
         return total_quantities_per_waste_code
+
 
 def __str__(self):
     return self.waste_name

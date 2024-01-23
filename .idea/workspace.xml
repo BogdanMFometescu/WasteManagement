@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="310bbe92-4f57-43c4-98db-03cae8029aea" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/records/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/records/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +32,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2aGp7JKRV8XoAR4cBsT8Qfqdt0t" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -42,9 +47,11 @@
   &quot;keyToString&quot;: {
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR_AND_PREVIEW&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;G:/Bogdan/2024/PROGRAMARE/PORTOFOLIO/waste-management/WasteManagement/waste/settings.py&quot;,
@@ -61,6 +68,13 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="G:\Bogdan\PROGRAMARE\Portofolio\waste-management\WasteManagement" />
     </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-50da183f06c8-2887949eec09-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.13135.95" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -96,6 +110,19 @@
       <workItem from="1704639365884" duration="876000" />
       <workItem from="1704640282322" duration="1567000" />
       <workItem from="1704641944186" duration="87000" />
+      <workItem from="1704732806838" duration="341000" />
+      <workItem from="1704733601681" duration="407000" />
+      <workItem from="1704734547624" duration="689000" />
+      <workItem from="1704735573616" duration="111000" />
+      <workItem from="1704825650301" duration="27000" />
+      <workItem from="1704825994692" duration="50000" />
+      <workItem from="1704826718129" duration="11000" />
+      <workItem from="1704905279924" duration="121000" />
+      <workItem from="1704905867099" duration="10000" />
+      <workItem from="1705172447612" duration="159000" />
+      <workItem from="1705596622602" duration="4152000" />
+      <workItem from="1705681144021" duration="596000" />
+      <workItem from="1705692056475" duration="28000" />
     </task>
     <servers />
   </component>
