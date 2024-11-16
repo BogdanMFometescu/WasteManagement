@@ -35,7 +35,7 @@ xhtml2pdf = "^0.2.13"
 
 
 [tool.poetry.group.dev.dependencies]
-setuptools = "^69.0.3"
+setuptools = "^70.0.0"
 
 [build-system]
 requires = ["poetry-core"]
